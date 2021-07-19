@@ -47,12 +47,20 @@ $(document).ready(function() {
             day: 'Día',
             list: 'Lista'
         },
+        allDaySlot: false,
         firstDay: 1,
+        businessHours: {
+            dow: [1, 2, 3, 4, 5], 
+            start: '08:00',
+            end: '20:00',
+        },
         header: {
             left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
+        minTime: '08:00:00',
+        maxTime: '20:00:00',
         defaultView: 'agendaWeek',
         nowIndicator: true,
         now: <?php echo "'" . $today ."T".$hours. "'"; ?>,
@@ -74,7 +82,8 @@ $(document).ready(function() {
 });
 </script>
 
-<a href="index.php?view=newreservation" class="btn btn-primary pull-right"><i class="fa fa-asterisk"></i> Nueva Reserva</a>
+<a href="index.php?view=newreservation" class="btn btn-primary pull-right"><i class="fa fa-asterisk"></i> Nueva
+    Reserva</a>
 
 <div class="row">
     <div class="col-md-12">
