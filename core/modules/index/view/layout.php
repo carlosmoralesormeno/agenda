@@ -53,12 +53,12 @@ if(Session::getUID()!=""):
                     <li><a href="index.php?view=newreservation"><i class="fa fa-asterisk"></i> Nueva Reserva</a></li>
                 </ul>
                 <ul class="nav navbar-nav side-nav">
-                    <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li><a href="index.php?view=home"><i class="fa fa-home"></i> Calendario</a></li>
                     <li><a href="index.php?view=reservations"><i class="fa fa-calendar"></i> Agenda</a></li>
-                    <li><a href="index.php?view=projects"><i class="fa fa-flask"></i> Prioridad</a></li>
                     <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Categorias</a></li>
                     <li><a href="index.php?view=contacts"><i class="fa fa-male"></i> Contactos</a></li>
                     <?php if($u->is_admin):?>
+                    <li><a href="index.php?view=projects"><i class="fa fa-flask"></i> Prioridad</a></li>
                     <li><a href="index.php?view=changelog"><i class="fa fa-filter"></i> Log de cambios </a></li>
                     <li><a href="index.php?view=users"><i class="fa fa-users"></i> Usuarios </a></li>
                     <?php endif;?>

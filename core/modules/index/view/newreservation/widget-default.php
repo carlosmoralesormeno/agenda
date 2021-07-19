@@ -63,7 +63,7 @@ $medics = CategoryData::getAll();
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <button type="submit" class="btn btn-default">Agregar Evento</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-save" aria-hidden="true"></i> Agregar Reserva</button>
                 </div>
             </div>
         </form>

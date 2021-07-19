@@ -74,7 +74,8 @@ $medics = CategoryData::getAll();
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                     <input type="hidden" name="id" value="<?php echo $reservation->id; ?>">
-                    <button type="submit" class="btn btn-default">Actualizar Evento</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Actualizar Reserva</button>
+                    <a href="index.php?action=delreservation&amp;id=<?=$_GET["id"]?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</a>
                 </div>
             </div>
         </form>
