@@ -22,7 +22,7 @@ foreach($events as $event){
             break;
     }
 
-	$thejson[] = array("title"=>$event->title,"description"=>$event->description,"color"=>$color,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at, "end"=>$event->date_at."T".$event->time_end);
+	$thejson[] = array("id"=>$event->id,"title"=>$event->title,"description"=>$event->description,"color"=>$color,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at, "end"=>$event->date_at."T".$event->time_end);
 	
 }
 // print_r(json_encode($thejson));
@@ -50,31 +50,34 @@ $(document).ready(function() {
         allDaySlot: false,
         firstDay: 1,
         businessHours: {
-            dow: [1, 2, 3, 4, 5], 
+            dow: [1, 2, 3, 4, 5],
             start: '08:00',
             end: '20:00',
         },
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+            right: 'month,agendaWeek,agendaDay,listWeek'
         },
+        slotLabelFormat: "HH:mm",
+        timeFormat: 'HH:mm',
         minTime: '08:00:00',
         maxTime: '20:00:00',
         defaultView: 'agendaWeek',
+        slotDuration: '00:15:00',
         nowIndicator: true,
         now: <?php echo "'" . $today ."T".$hours. "'"; ?>,
-        editable: false,
+        editable: true,
         eventLimit: true, // allow "more" link when too many events
         events: <?php echo json_encode($thejson); ?>,
-        eventRender: function(eventObj, $el) {
-            $el.popover({
-                title: eventObj.title,
-                content: eventObj.description,
-                trigger: 'hover',
-                placement: 'top',
-                container: 'body'
-            });
+        eventDrop: function(event, delta, revertFunc) {
+            edit_event_ajax(event.id, event.start.format('Y-MM-DD'), event.start.format('HH:mm'), event.end
+                    .format('HH:mm'));
+
+        },
+        eventResize: function(event, delta, revertFunc) {
+            edit_event_ajax(event.id, event.start.format('Y-MM-DD'), event.start.format('HH:mm'), event.end
+                    .format('HH:mm'));
         }
 
     });

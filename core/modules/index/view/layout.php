@@ -116,6 +116,7 @@ if(Session::getUID()!=""){
     <!-- JavaScript -->
 
     <script src="res/bootstrap3/js/bootstrap.min.js"></script>
+    <script src="js/functions.js"></script>
 
 </body>
 

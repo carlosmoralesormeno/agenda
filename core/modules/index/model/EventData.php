@@ -36,6 +36,11 @@ class EventData {
 		Executor::doit($sql);
 	}
 
+	public function update_ajax(){
+		$sql = "update ".self::$tablename." set date_at=\"$this->date_at\",time_at=\"$this->time_at\",time_end=\"$this->time_end\" where id=$this->id";
+		Executor::doit($sql);
+	}
+
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
