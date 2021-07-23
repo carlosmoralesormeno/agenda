@@ -19,14 +19,14 @@ $medics = CategoryData::getAll();
             <div class="form-group">
                 <label for="inputEmail1" class="col-lg-2 control-label">Hora Inicio</label>
                 <div class="col-lg-2">
-                <input type="time" name="time_at" value="<?php echo $reservation->time_at; ?>" class="form-control"
+                <input type="time" name="time_at" value="<?php echo $reservation->time_at; ?>" required class="form-control"
                         id="inputEmail1" placeholder="Hora">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail1" class="col-lg-2 control-label">Hora Termino</label>
                 <div class="col-lg-2">
-                    <input type="time" name="time_end" value="<?php echo $reservation->time_end; ?>" class="form-control" id="inputEmail1" placeholder="Hora">
+                    <input type="time" name="time_end" value="<?php echo $reservation->time_end; ?>" required class="form-control" id="inputEmail1" placeholder="Hora">
                 </div>
             </div>
             <div class="form-group">

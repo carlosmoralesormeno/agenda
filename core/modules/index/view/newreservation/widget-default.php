@@ -17,13 +17,13 @@ $medics = CategoryData::getAll();
             <div class="form-group">
                 <label for="inputEmail1" class="col-lg-2 control-label">Hora Inicio</label>
                 <div class="col-lg-2">
-                    <input type="time" name="time_at" class="form-control" id="inputEmail1" placeholder="Hora">
+                    <input type="time" name="time_at" required class="form-control" id="inputEmail1" placeholder="Hora">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail1" class="col-lg-2 control-label">Hora Termino</label>
                 <div class="col-lg-2">
-                    <input type="time" name="time_end" class="form-control" id="inputEmail1" placeholder="Hora">
+                    <input type="time" name="time_end" required class="form-control" id="inputEmail1" placeholder="Hora">
                 </div>
             </div>
             <div class="form-group">
