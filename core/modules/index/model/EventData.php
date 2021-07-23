@@ -61,7 +61,7 @@ class EventData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." where date(date_at)>=date(NOW()) order by time_at, date_at";
+		$sql = "select * from ".self::$tablename." where date(date_at)>=date(NOW()) order by date_at, time_at ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new EventData());
 	}
